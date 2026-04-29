@@ -4,14 +4,14 @@
 // Tasa de VENTA del dólar según BCRD
 
 export const EXCHANGE_RATE = {
-  // Tasa de compra del BCRD (17/04/2026)
+  // Tasa de compra del BCRD (27/04/2026)
   compra: 58.9769,
-  // Tasa de venta del BCRD (17/04/2026)
+  // Tasa de venta del BCRD (27/04/2026)
   venta: 59.6897,
   // Tasa de venta usada para cálculos (precio de venta oficial BCRD)
   promedio: 59.6897,
   // Fecha de la tasa
-  fecha: '25 de Abril 2026',
+  fecha: '27 de Abril 2026',
   // Fuente
   fuente: 'Banco Central de la República Dominicana (BCRD)',
 };

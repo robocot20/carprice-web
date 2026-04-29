@@ -96,7 +96,7 @@ function App() {
         // Intentar conectar al backend
         try {
           const { getEnrichedPrice, getVehicles } = await import('./services/api');
-          stats = await getAveragePrice(searchFilters);
+          stats = await getEnrichedPrice(searchFilters);
           vehiclesData = await getVehicles(searchFilters, 100, 0);
         } catch (backendErr) {
           console.warn('Backend no disponible, usando mocks:', backendErr);

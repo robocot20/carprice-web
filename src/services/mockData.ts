@@ -339,6 +339,13 @@ function calculateStats(vehicles: Vehicle[]): PriceStats {
     precio_minimo_dop: Math.round(minimo * EXCHANGE_RATE.venta * 100) / 100,
     precio_maximo_dop: Math.round(maximo * EXCHANGE_RATE.venta * 100) / 100,
     precio_mediana_dop: Math.round(mediana * EXCHANGE_RATE.venta * 100) / 100,
+    valor_minimo_seguro: Math.round(promedio * 0.70 * 100) / 100,
+    valor_maximo_seguro: Math.round(promedio * 1.30 * 100) / 100,
+    valor_minimo_seguro_dop: Math.round(promedio * 0.70 * EXCHANGE_RATE.venta * 100) / 100,
+    valor_maximo_seguro_dop: Math.round(promedio * 1.30 * EXCHANGE_RATE.venta * 100) / 100,
+    fuentes_consultadas: ['mock_supercarros', 'mock_carrosrd'],
+    fuentes_complementarias: [],
+    busqueda_enriquecida: false,
     vehiculos: vehicles,
     tasa_cambio: EXCHANGE_RATE,
   };
