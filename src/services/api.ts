@@ -63,6 +63,15 @@ export interface PriceStats {
   precio_mediana_dop: number;
   vehiculos: Vehicle[];
   tasa_cambio: ExchangeRate;
+  // Rango para seguros (±30% del promedio)
+  valor_minimo_seguro?: number;
+  valor_maximo_seguro?: number;
+  valor_minimo_seguro_dop?: number;
+  valor_maximo_seguro_dop?: number;
+  // Metadata multifuente
+  fuentes_consultadas?: string[];
+  fuentes_complementarias?: Array<{ fuente: string; tipo: string; cantidad: number; nota: string }>;
+  busqueda_enriquecida?: boolean;
 }
 
 // Response types from API
@@ -164,11 +173,7 @@ export async function getAveragePrice(filters: SearchFilters): Promise<PriceStat
  * Obtiene lista de vehiculos
  */
 
-export async function getEnrichedPrice(filters: SearchFilters): Promise<PriceStats & {
-  fuentes_consultadas?: string[];
-  fuentes_complementarias?: Array<{ fuente: string; tipo: string; cantidad: number; nota: string }>;
-  busqueda_enriquecida?: boolean;
-}> {
+export async function getEnrichedPrice(filters: SearchFilters): Promise<PriceStats> {
   const url = new URL(`${API_BASE_URL}/api/precio-enriquecido`);
   if (filters.marca) url.searchParams.set('marca', filters.marca);
   if (filters.modelo) url.searchParams.set('modelo', filters.modelo);
